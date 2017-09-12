@@ -3,7 +3,7 @@
 Author : Chinatsu Kawakami
 Date : 2017 09 12
 description: this is the application the user can generate password when the user pushes button.
-Version 0.0.3 add the function to generate password when the user clicks button
+Version 0.0.4 Add the function to generate password randamly when the user clicks button
 -->
 
 <!DOCTYPE html>
@@ -82,7 +82,22 @@ Version 0.0.3 add the function to generate password when the user clicks button
 
     function getPassword()
     {
-    	result.value= 'f8asdf8asdf';
+    	var seed = 'abcdefghijklmnopqrstuvwxyz';
+    	var len = slider.value;
+    	var pwd = '';
+
+    	/*for(var i=0;i<len;i++)
+    	{
+
+    		pwd += seed[Math.floor(Math.random() * seed.length)];
+    	}*/
+
+    	while(len--)
+    	{
+          pwd += seed[Math.floor(Math.random() * seed.length)];
+    	}
+    	result.value=pwd;
+    	//result.value= 'f8asdf8asdf';
     }
 
     slider.addEventListener('change',function(){
