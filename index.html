@@ -1,4 +1,11 @@
 
+<!--
+Author : Chinatsu Kawakami
+Date : 2017 09 12
+description: this is the application the user can generate password when the user pushes button.
+Version 0.0.3 add the function to generate password when the user clicks button
+-->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -52,7 +59,7 @@
 </head>
 <body>
   <div class="container">
-    <p><input type="text"></p>
+    <p><input type="text" id="result"></p>
     <div id="btn">Generate Password</div>
     <p></p>
     <fieldset>
@@ -71,10 +78,31 @@
     
     var slider = document.getElementById('slider');
     var label = document.getElementById('label');
+    var result = document.getElementById('result');
+
+    function getPassword()
+    {
+    	result.value= 'f8asdf8asdf';
+    }
 
     slider.addEventListener('change',function(){
       label.innerHTML = this.value;
     });
+
+    btn.addEventListener('click',function()
+    {
+    	getPassword();
+       // result.value= 'f8asdf8asdf';
+    });
+
+     result.addEventListener('click',function()
+    {
+        this.select();
+    });
+
+
+     getPassword();
+
   })();	
 
   </script>
